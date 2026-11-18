@@ -74,6 +74,11 @@ fun BrotherDashboard() {
         if (granted) startVoiceLoop(context, scope)
     }
 
+    var listening by remember { mutableStateOf(false) }
+    var muted by remember { mutableStateOf(false) }
+    var coreState by remember { mutableStateOf(CoreState.IDLE) }
+    var statusText by remember { mutableStateOf("SYSTEMS ONLINE") }
+    var lastResponse by remember { mutableStateOf("Ready. Tap the mic and speak, Bhai.") }
     // ── Real engines (wired!) ──
     val voice = remember { VoiceEngine(context) }
     val recognizer = remember {
@@ -101,14 +106,7 @@ fun BrotherDashboard() {
             }
         )
     }
-
-    var listening by remember { mutableStateOf(false) }
-    var muted by remember { mutableStateOf(false) }
-    var coreState by remember { mutableStateOf(CoreState.IDLE) }
-    var statusText by remember { mutableStateOf("SYSTEMS ONLINE") }
-    var lastResponse by remember { mutableStateOf("Ready. Tap the mic and speak, Bhai.") }
-
-    // Real telemetry
+// Real telemetry
     var batteryPct by remember { mutableStateOf("--%") }
     var ramUsed by remember { mutableStateOf("--") }
     var cpuLoad by remember { mutableStateOf("--") }
