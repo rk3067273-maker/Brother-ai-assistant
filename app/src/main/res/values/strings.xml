@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Brother</string>
+    <string name="assistant_default_name">Brother</string>
+    <string name="accessibility_description">Brother needs accessibility permission to control your phone: open apps, tap, scroll, type, and automate tasks by voice command.</string>
+</resources>
